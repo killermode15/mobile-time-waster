@@ -21,11 +21,16 @@ public static class ExtensionScript
 
     public static int ToHours(this int seconds)
     {
-        return ((seconds / 60) / 60) % 60;
+        return ((seconds / 60) / 60) % 24;
     }
 
     public static int ToDays(this int seconds)
     {
-        return (((seconds / 60) / 60) / 24) % 24;
+        return (((seconds / 60) / 60) / 24) % 365;
+    }
+
+    public static int ToYears(this int seconds)
+    {
+        return (((seconds / 60) / 60) / 24 / 365) % 100;
     }
 }
